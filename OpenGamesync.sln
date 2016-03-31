@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "OpenGamesync_Server", "OpenGamesync\OpenGamesync_Server.vbproj", "{96C38CC3-6EDA-4C48-B0D5-BE16427A4667}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "OpenGamesync_Client_wpf", "WpfApplication1\OpenGamesync_Client_wpf.vbproj", "{90FEE0D9-176E-4A04-ADAA-8059D0ABF974}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96C38CC3-6EDA-4C48-B0D5-BE16427A4667}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96C38CC3-6EDA-4C48-B0D5-BE16427A4667}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96C38CC3-6EDA-4C48-B0D5-BE16427A4667}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96C38CC3-6EDA-4C48-B0D5-BE16427A4667}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90FEE0D9-176E-4A04-ADAA-8059D0ABF974}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90FEE0D9-176E-4A04-ADAA-8059D0ABF974}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90FEE0D9-176E-4A04-ADAA-8059D0ABF974}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90FEE0D9-176E-4A04-ADAA-8059D0ABF974}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

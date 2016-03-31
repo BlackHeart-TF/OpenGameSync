@@ -1,0 +1,25 @@
+﻿<Window x:Class="editor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1"
+        mc:Ignorable="d"
+        Title="editor" Height="152.429" Width="300" ShowInTaskbar="False" ResizeMode="NoResize" WindowStartupLocation="CenterOwner"
+        Loaded="editorloaded">
+    <Grid>
+        <Canvas>
+            <Border BorderThickness="1" BorderBrush="Black" Height="64" Width="64" Canvas.Left="10" Canvas.Top="19">
+                <Image x:Name="_gameicon" HorizontalAlignment="Left" Height="64" Margin="0" VerticalAlignment="Top" Width="64" Stretch="Fill"/>
+            </Border>
+            <TextBox x:Name="_ExePathBox" HorizontalAlignment="Left" Height="23" TextChanged="exetxt_Changed" TextWrapping="NoWrap"  Text="C:\" VerticalAlignment="Top" Width="123" Canvas.Left="90" Canvas.Top="23"/>
+            <Button x:Name="button" Content="Browse" Canvas.Left="218" Canvas.Top="23" Width="65" Height="23"/>
+            <Label x:Name="label" Content="Game Exe Path:" Canvas.Left="84" Canvas.Top="2" Height="26"/>
+            <Button x:Name="button1" Content="Save" Canvas.Left="218" Canvas.Top="94" Width="65" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+            <Button x:Name="button1_Copy" Content="Cancel" Canvas.Left="148" Canvas.Top="94" Width="65" IsCancel="True" IsDefault="True" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+            <TextBox x:Name="_SaveFolderBox" HorizontalAlignment="Left" Height="23" TextChanged="foldertxt_Changed" TextWrapping="NoWrap" Text="C:\" VerticalAlignment="Top" Width="123" Canvas.Left="90" Canvas.Top="60"/>
+            <Button x:Name="button_Copy" Content="Browse" Canvas.Left="218" Canvas.Top="60" Width="65" Height="23"/>
+            <Label x:Name="label_Copy" Content="Game Save Directory::" Canvas.Left="84" Canvas.Top="39" Height="26"/>
+        </Canvas>
+    </Grid>
+</Window>
