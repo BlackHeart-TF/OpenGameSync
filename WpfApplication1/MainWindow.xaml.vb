@@ -35,6 +35,8 @@ Class MainWindow
             Games.Add(New GameEntry() With {
         .GameIcon = newgame.imagesource,
         .GameName = newgame.szGameName,
+        .savdir = newgame.savdir,
+        .exepath = newgame.exepath,
         .LastSync = 0})
         End If
     End Sub
@@ -52,9 +54,34 @@ Class MainWindow
         End If
 
     End Sub
+
+    Private Sub Button_Click_1(sender As Object, e As RoutedEventArgs)
+        Dim selection As GameEntry = _GameList.SelectedItem
+        If _GameList.SelectedItems.Count > 0 Then
+            Dim editgame As New editor
+            editgame.isEdit = True
+            editgame.imagesource = selection.GameIcon
+            editgame.exepath = selection.exepath
+            editgame.savdir = selection.savdir
+            editgame.szGameName = selection.GameName
+
+            editgame.ShowDialog()
+            If editgame.DialogResult.HasValue And editgame.DialogResult.Value Then
+                Games.RemoveAt(_GameList.SelectedIndex)
+                Games.Add(New GameEntry() With {
+.GameIcon = editgame.imagesource,
+.GameName = editgame.szGameName,
+.savdir = editgame.savdir,
+.exepath = editgame.exepath,
+.LastSync = 0})
+            End If
+        End If
+    End Sub
 End Class
 Public Class GameEntry
     Public Property GameIcon As ImageSource
     Public Property GameName As String
     Public Property LastSync As Integer
+    Public Property exepath As String
+    Public Property savdir As String
 End Class

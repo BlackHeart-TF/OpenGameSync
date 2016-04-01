@@ -3,20 +3,36 @@ Imports System.Runtime.CompilerServices
 Imports System.Windows.Interop
 Public Class editor
     Public Property imagesource As ImageSource
-    Public Property newgameicon As Icon = SystemIcons.Question
     Public Property exepath As String
     Public Property savdir As String
     Public Property szGameName As String
+    Public Property isEdit As Boolean = False
 
     Private Sub save_Click(sender As Object, e As RoutedEventArgs)
+        exepath = _ExePathBox.Text
+        savdir = _SaveFolderBox.Text
+        szGameName = _GameName.Text
+        imagesource = _gameicon.Source
+
         DialogResult = True
 
     End Sub
     'System.Drawing.Icon.ExtractAssociatedIcon()
 
     Private Sub editorloaded()
-        Dim newicon As ImageSource = SystemIcons.Question.ToImageSource
-        _gameicon.Source = newicon
+        If Not isEdit Then
+            Dim newicon As ImageSource = SystemIcons.Question.ToImageSource
+            _gameicon.Source = newicon
+        Else
+            Try
+                _ExePathBox.Text = exepath
+                _gameicon.Source = imagesource
+                _GameName.Text = szGameName
+                _SaveFolderBox.Text = savdir
+            Catch ex As Exception
+                MessageBox.Show("Error loading settings.")
+            End Try
+        End If
     End Sub
 
     Private Sub exebrowse_Click(sender As Object, e As RoutedEventArgs)
@@ -29,8 +45,6 @@ Public Class editor
             Dim file As String = fileDialog.FileName
             _ExePathBox.Text = file
             _gameicon.Source = System.Drawing.Icon.ExtractAssociatedIcon(file).ToImageSource
-            exepath = file
-            imagesource = System.Drawing.Icon.ExtractAssociatedIcon(file).ToImageSource
         Else
             _ExePathBox.Text = vbNullString
         End If
@@ -45,7 +59,6 @@ Public Class editor
         If result = Forms.DialogResult.OK Then
             _SaveFolderBox.Text = dialog.SelectedPath
             _SaveFolderBox.ScrollToEnd()
-            savdir = dialog.SelectedPath
         End If
 
     End Sub
@@ -66,7 +79,6 @@ Public Class editor
             _SaveButton.IsEnabled = False
             _SaveButton.ToolTip = "Enter a Friendly name. Ex: ""My Game"""
         End If
-        szGameName = _GameName.Text
     End Sub
 End Class
 

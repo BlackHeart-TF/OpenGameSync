@@ -19,7 +19,7 @@
             <Button x:Name="button1_Copy" Content="Cancel" Canvas.Left="148" Canvas.Top="131" Width="65" IsCancel="True" IsDefault="True" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
             <TextBox x:Name="_SaveFolderBox" HorizontalAlignment="Left" Height="23" TextChanged="foldertxt_Changed" TextWrapping="NoWrap" Text="C:\" VerticalAlignment="Top" Width="123" Canvas.Left="90" Canvas.Top="97"/>
             <Button x:Name="button_Copy" Content="Browse" Canvas.Left="218" Canvas.Top="97" Width="65" Height="23"/>
-            <Label x:Name="label_Copy" Content="Game Save Directory::" Canvas.Left="84" Canvas.Top="76" Height="26"/>
+            <Label x:Name="label_Copy" Content="Game Save Directory:" Canvas.Left="84" Canvas.Top="76" Height="26"/>
             <TextBox x:Name="_GameName" TextChanged="nametxt_changed" HorizontalAlignment="Left" Height="23" TextWrapping="NoWrap" VerticalAlignment="Top" Width="193" Canvas.Left="90" Canvas.Top="23"/>
             <Label x:Name="label_Copy1" Content="Friendly name:" Canvas.Left="84" Height="26" Canvas.Top="2"/>
         </Canvas>

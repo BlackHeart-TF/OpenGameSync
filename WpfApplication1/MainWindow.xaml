@@ -27,7 +27,7 @@
 
             <DockPanel  Height="28" DockPanel.Dock="Bottom">
                 <Button Content="New" Margin="5" Width="80" HorizontalAlignment="Left" Click="Button_Click" />
-                <Button Content="Edit" Margin="5" Width="80" />
+                <Button Content="Edit" Margin="5" Width="80" Click="Button_Click_1" />
                 <Button Name="_Delete" Content="Delete" Margin="5" Width="80" Click="_Delete_Click" />
                 <Button Content="Sync" Margin="5" Width="80" HorizontalAlignment="Right" />
 
