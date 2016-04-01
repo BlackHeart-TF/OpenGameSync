@@ -77,6 +77,10 @@ Class MainWindow
             End If
         End If
     End Sub
+
+    Private Sub MenuItem_Click(sender As Object, e As RoutedEventArgs)
+        Me.Close()
+    End Sub
 End Class
 Public Class GameEntry
     Public Property GameIcon As ImageSource

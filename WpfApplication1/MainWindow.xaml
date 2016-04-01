@@ -11,11 +11,11 @@
             <DockPanel DockPanel.Dock="Top">
                 <Menu DockPanel.Dock="Top">
                     <MenuItem Header="_File">
-                        <MenuItem Header="_New"/>
-                        <MenuItem Header="_Edit"/>
-                        <MenuItem Header="_Delete"/>
+                        <MenuItem Header="_New" Click="Button_Click"/>
+                        <MenuItem Header="_Edit" Click="Button_Click_1"/>
+                        <MenuItem Header="_Delete" Click="_Delete_Click"/>
                         <Separator/>
-                        <MenuItem Header="_Exit"/>
+                        <MenuItem Header="_Exit" Click="MenuItem_Click"/>
                     </MenuItem>
                     <MenuItem Header="_Options">
                         <MenuItem Header="_Settings"/>
