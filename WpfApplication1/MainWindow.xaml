@@ -28,16 +28,22 @@
             <DockPanel  Height="28" DockPanel.Dock="Bottom">
                 <Button Content="New" Margin="5" Width="80" HorizontalAlignment="Left" Click="Button_Click" />
                 <Button Content="Edit" Margin="5" Width="80" />
-                <Button Content="Delete" Margin="5" Width="80" />
+                <Button Name="_Delete" Content="Delete" Margin="5" Width="80" Click="_Delete_Click" />
                 <Button Content="Sync" Margin="5" Width="80" HorizontalAlignment="Right" />
 
             </DockPanel>
             <DockPanel>
-                <ListView Name="GameList" ItemsSource="{Binding Path=Games}">
+                <ListView Name="_GameList" ItemsSource="{Binding Path=Games}">
                     <ListView.View>
                         <GridView AllowsColumnReorder="True" ColumnHeaderToolTip="Employee Information">
-                            <GridViewColumn Header="_Icon"  DisplayMemberBinding="{Binding GameIcon}" Width="80"/>
-                                <GridViewColumn Header="_GameName" DisplayMemberBinding="{Binding GameName}" Width="80"/>
+                            <GridViewColumn Header="_Icon">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Image Source="{Binding GameIcon}" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="_GameName" DisplayMemberBinding="{Binding GameName}" Width="80"/>
                                 <GridViewColumn Header="_LastSync" DisplayMemberBinding="{Binding LastSync}" Width="80"/>
                         </GridView>
                     </ListView.View>

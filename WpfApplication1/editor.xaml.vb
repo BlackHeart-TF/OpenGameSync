@@ -4,9 +4,13 @@ Imports System.Windows.Interop
 Public Class editor
     Public Property imagesource As ImageSource
     Public Property newgameicon As Icon = SystemIcons.Question
+    Public Property exepath As String
+    Public Property savdir As String
+    Public Property szGameName As String
 
-    Private Sub button1_Click(sender As Object, e As RoutedEventArgs) Handles button1.Click
+    Private Sub save_Click(sender As Object, e As RoutedEventArgs)
         DialogResult = True
+
     End Sub
     'System.Drawing.Icon.ExtractAssociatedIcon()
 
@@ -15,7 +19,7 @@ Public Class editor
         _gameicon.Source = newicon
     End Sub
 
-    Private Sub button_Click(sender As Object, e As RoutedEventArgs) Handles button.Click
+    Private Sub exebrowse_Click(sender As Object, e As RoutedEventArgs)
         Dim fileDialog As Forms.OpenFileDialog = New Forms.OpenFileDialog()
         fileDialog.CheckFileExists = True
         fileDialog.InitialDirectory = "C:\"
@@ -25,7 +29,8 @@ Public Class editor
             Dim file As String = fileDialog.FileName
             _ExePathBox.Text = file
             _gameicon.Source = System.Drawing.Icon.ExtractAssociatedIcon(file).ToImageSource
-
+            exepath = file
+            imagesource = System.Drawing.Icon.ExtractAssociatedIcon(file).ToImageSource
         Else
             _ExePathBox.Text = vbNullString
         End If
@@ -40,6 +45,7 @@ Public Class editor
         If result = Forms.DialogResult.OK Then
             _SaveFolderBox.Text = dialog.SelectedPath
             _SaveFolderBox.ScrollToEnd()
+            savdir = dialog.SelectedPath
         End If
 
     End Sub
@@ -50,6 +56,17 @@ Public Class editor
 
     Private Sub foldertxt_Changed()
         _SaveFolderBox.ScrollToEnd()
+    End Sub
+
+    Private Sub nametxt_changed()
+        If _GameName.Text.Count > 0 Then
+            _SaveButton.IsEnabled = True
+            _SaveButton.ToolTip = "Click to save"
+        Else
+            _SaveButton.IsEnabled = False
+            _SaveButton.ToolTip = "Enter a Friendly name. Ex: ""My Game"""
+        End If
+        szGameName = _GameName.Text
     End Sub
 End Class
 
